@@ -89,7 +89,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="ScI-bg-iHb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="ScI-bg-iHb" customClass="textTableViewCell" customModule="Original_Application" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ScI-bg-iHb" id="JVq-FE-41H">
@@ -116,7 +116,11 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="AP3-FN-26S"/>
+                            <barButtonItem systemItem="add" id="AP3-FN-26S">
+                                <connections>
+                                    <action selector="add" destination="SAa-rI-Oy5" id="yTS-Vf-QDD"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem title="Sort" id="pr2-Ri-BWg">
                                 <connections>
                                     <action selector="didTapSort" destination="SAa-rI-Oy5" id="RE8-V8-pD9"/>
@@ -130,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQw-0X-dOg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1639" y="110"/>
+            <point key="canvasLocation" x="1571.0144927536232" y="127.90178571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2qQ-EX-j3h">
