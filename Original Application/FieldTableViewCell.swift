@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FieldTableViewCell: UITableViewCell, UITextFieldDelegate {
 
+    var table: UITableView!
+    
+    let realm = try! Realm()
+    
     static let identifier = "FieldTableViewCell"
     
     static func nib() -> UINib {
@@ -18,6 +23,8 @@ class FieldTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet var field: UITextField!
     
+    var addMemo: String!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         field.placeholder = "Write Somothing"
@@ -25,8 +32,20 @@ class FieldTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let memo = Memo()
+        
+//        print("\(textField.text ?? "")")
+
+        addMemo = memo.textedMemo
+        
+        try! realm.write {
+            // プロパティ値を変更することで
+            // Realmに反映される
+            memo.textedMemo = addMemo
+        }
+        
         textField.resignFirstResponder()
-        print("\(textField.text ?? "")")
+        
         return true
     }
 

@@ -3,31 +3,61 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		AE3A9CB824740FEE00DD0C09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3A9CB724740FEE00DD0C09 /* AppDelegate.swift */; };
 		AE3A9CBA24740FEE00DD0C09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3A9CB924740FEE00DD0C09 /* SceneDelegate.swift */; };
-		AE3A9CBC24740FEE00DD0C09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3A9CBB24740FEE00DD0C09 /* ViewController.swift */; };
+		AE3A9CBC24740FEE00DD0C09 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3A9CBB24740FEE00DD0C09 /* MemoViewController.swift */; };
 		AE3A9CC124740FF100DD0C09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE3A9CC024740FF100DD0C09 /* Assets.xcassets */; };
 		AE3A9CC424740FF100DD0C09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE3A9CC224740FF100DD0C09 /* LaunchScreen.storyboard */; };
 		AE3A9CCE2476E25D00DD0C09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE3A9CCD2476E25D00DD0C09 /* Main.storyboard */; };
 		AE3A9D0724788B7D00DD0C09 /* FieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3A9D0524788B7D00DD0C09 /* FieldTableViewCell.swift */; };
 		AE3A9D0824788B7D00DD0C09 /* FieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3A9D0624788B7D00DD0C09 /* FieldTableViewCell.xib */; };
+		AE3A9D0A2479EE8600DD0C09 /* FolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3A9D092479EE8600DD0C09 /* FolderViewController.swift */; };
+		AE3A9D0D2479F4D200DD0C09 /* FolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3A9D0B2479F4D200DD0C09 /* FolderCollectionViewCell.swift */; };
+		AE3A9D0E2479F4D200DD0C09 /* FolderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3A9D0C2479F4D200DD0C09 /* FolderCollectionViewCell.xib */; };
+		AEBCB8F5247A4AFF00517168 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = AEBCB8F4247A4AFF00517168 /* Realm */; };
+		AEBCB8F7247A4AFF00517168 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AEBCB8F6247A4AFF00517168 /* RealmSwift */; };
+		AEBCB8F9247A4B7000517168 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBCB8F8247A4B7000517168 /* DB.swift */; };
+		AEF86B18247A1DB00042C758 /* TextStyles-NewYork.xd in Resources */ = {isa = PBXBuildFile; fileRef = AEF86B0D247A1DAF0042C758 /* TextStyles-NewYork.xd */; };
+		AEF86B19247A1DB00042C758 /* UIElements+DesignTemplates+Guides-iPhone.xd in Resources */ = {isa = PBXBuildFile; fileRef = AEF86B0E247A1DAF0042C758 /* UIElements+DesignTemplates+Guides-iPhone.xd */; };
+		AEF86B1A247A1DB00042C758 /* UIElements+DesignTemplates+Guides-iPad.xd in Resources */ = {isa = PBXBuildFile; fileRef = AEF86B0F247A1DAF0042C758 /* UIElements+DesignTemplates+Guides-iPad.xd */; };
+		AEF86B1B247A1DB00042C758 /* Template-PromotionalImages-iOS.xd in Resources */ = {isa = PBXBuildFile; fileRef = AEF86B11247A1DAF0042C758 /* Template-PromotionalImages-iOS.xd */; };
+		AEF86B1C247A1DB00042C758 /* Template-Glyph-QuickAction.xd in Resources */ = {isa = PBXBuildFile; fileRef = AEF86B12247A1DAF0042C758 /* Template-Glyph-QuickAction.xd */; };
+		AEF86B1D247A1DB00042C758 /* Template-AppIcons-iMessage-iOS.xd in Resources */ = {isa = PBXBuildFile; fileRef = AEF86B13247A1DAF0042C758 /* Template-AppIcons-iMessage-iOS.xd */; };
+		AEF86B1E247A1DB00042C758 /* Template-Glyph-NavigationBarAndToolbar.xd in Resources */ = {isa = PBXBuildFile; fileRef = AEF86B14247A1DAF0042C758 /* Template-Glyph-NavigationBarAndToolbar.xd */; };
+		AEF86B1F247A1DB00042C758 /* Template-Glyphs-ActivityViewActions.xd in Resources */ = {isa = PBXBuildFile; fileRef = AEF86B15247A1DAF0042C758 /* Template-Glyphs-ActivityViewActions.xd */; };
+		AEF86B20247A1DB00042C758 /* Template-Glyph-TabBar.xd in Resources */ = {isa = PBXBuildFile; fileRef = AEF86B16247A1DAF0042C758 /* Template-Glyph-TabBar.xd */; };
+		AEF86B21247A1DB00042C758 /* Template-AppIcons-iOS.xd in Resources */ = {isa = PBXBuildFile; fileRef = AEF86B17247A1DAF0042C758 /* Template-AppIcons-iOS.xd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AE3A9CB424740FEE00DD0C09 /* Original Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Original Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3A9CB724740FEE00DD0C09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE3A9CB924740FEE00DD0C09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AE3A9CBB24740FEE00DD0C09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AE3A9CBB24740FEE00DD0C09 /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		AE3A9CC024740FF100DD0C09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE3A9CC324740FF100DD0C09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE3A9CC524740FF100DD0C09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE3A9CCD2476E25D00DD0C09 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AE3A9D0524788B7D00DD0C09 /* FieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldTableViewCell.swift; sourceTree = "<group>"; };
 		AE3A9D0624788B7D00DD0C09 /* FieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FieldTableViewCell.xib; sourceTree = "<group>"; };
+		AE3A9D092479EE8600DD0C09 /* FolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewController.swift; sourceTree = "<group>"; };
+		AE3A9D0B2479F4D200DD0C09 /* FolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCollectionViewCell.swift; sourceTree = "<group>"; };
+		AE3A9D0C2479F4D200DD0C09 /* FolderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FolderCollectionViewCell.xib; sourceTree = "<group>"; };
+		AEBCB8F8247A4B7000517168 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		AEF86B0D247A1DAF0042C758 /* TextStyles-NewYork.xd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TextStyles-NewYork.xd"; sourceTree = "<group>"; };
+		AEF86B0E247A1DAF0042C758 /* UIElements+DesignTemplates+Guides-iPhone.xd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UIElements+DesignTemplates+Guides-iPhone.xd"; sourceTree = "<group>"; };
+		AEF86B0F247A1DAF0042C758 /* UIElements+DesignTemplates+Guides-iPad.xd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UIElements+DesignTemplates+Guides-iPad.xd"; sourceTree = "<group>"; };
+		AEF86B11247A1DAF0042C758 /* Template-PromotionalImages-iOS.xd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Template-PromotionalImages-iOS.xd"; sourceTree = "<group>"; };
+		AEF86B12247A1DAF0042C758 /* Template-Glyph-QuickAction.xd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Template-Glyph-QuickAction.xd"; sourceTree = "<group>"; };
+		AEF86B13247A1DAF0042C758 /* Template-AppIcons-iMessage-iOS.xd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Template-AppIcons-iMessage-iOS.xd"; sourceTree = "<group>"; };
+		AEF86B14247A1DAF0042C758 /* Template-Glyph-NavigationBarAndToolbar.xd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Template-Glyph-NavigationBarAndToolbar.xd"; sourceTree = "<group>"; };
+		AEF86B15247A1DAF0042C758 /* Template-Glyphs-ActivityViewActions.xd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Template-Glyphs-ActivityViewActions.xd"; sourceTree = "<group>"; };
+		AEF86B16247A1DAF0042C758 /* Template-Glyph-TabBar.xd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Template-Glyph-TabBar.xd"; sourceTree = "<group>"; };
+		AEF86B17247A1DAF0042C758 /* Template-AppIcons-iOS.xd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Template-AppIcons-iOS.xd"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEBCB8F7247A4AFF00517168 /* RealmSwift in Frameworks */,
+				AEBCB8F5247A4AFF00517168 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,17 +92,55 @@
 		AE3A9CB624740FEE00DD0C09 /* Original Application */ = {
 			isa = PBXGroup;
 			children = (
+				AEF86B0B247A1DAF0042C758 /* iOS 13 Adobe XD */,
 				AE3A9CB724740FEE00DD0C09 /* AppDelegate.swift */,
 				AE3A9CB924740FEE00DD0C09 /* SceneDelegate.swift */,
-				AE3A9CBB24740FEE00DD0C09 /* ViewController.swift */,
-				AE3A9CCD2476E25D00DD0C09 /* Main.storyboard */,
+				AE3A9CBB24740FEE00DD0C09 /* MemoViewController.swift */,
 				AE3A9D0524788B7D00DD0C09 /* FieldTableViewCell.swift */,
 				AE3A9D0624788B7D00DD0C09 /* FieldTableViewCell.xib */,
+				AE3A9CCD2476E25D00DD0C09 /* Main.storyboard */,
+				AE3A9D092479EE8600DD0C09 /* FolderViewController.swift */,
+				AE3A9D0B2479F4D200DD0C09 /* FolderCollectionViewCell.swift */,
+				AE3A9D0C2479F4D200DD0C09 /* FolderCollectionViewCell.xib */,
+				AEBCB8F8247A4B7000517168 /* DB.swift */,
 				AE3A9CC024740FF100DD0C09 /* Assets.xcassets */,
 				AE3A9CC224740FF100DD0C09 /* LaunchScreen.storyboard */,
 				AE3A9CC524740FF100DD0C09 /* Info.plist */,
 			);
 			path = "Original Application";
+			sourceTree = "<group>";
+		};
+		AEF86B0B247A1DAF0042C758 /* iOS 13 Adobe XD */ = {
+			isa = PBXGroup;
+			children = (
+				AEF86B0C247A1DAF0042C758 /* UI Elements + Design Templates + Guides */,
+				AEF86B10247A1DAF0042C758 /* Production Templates */,
+			);
+			path = "iOS 13 Adobe XD";
+			sourceTree = "<group>";
+		};
+		AEF86B0C247A1DAF0042C758 /* UI Elements + Design Templates + Guides */ = {
+			isa = PBXGroup;
+			children = (
+				AEF86B0D247A1DAF0042C758 /* TextStyles-NewYork.xd */,
+				AEF86B0E247A1DAF0042C758 /* UIElements+DesignTemplates+Guides-iPhone.xd */,
+				AEF86B0F247A1DAF0042C758 /* UIElements+DesignTemplates+Guides-iPad.xd */,
+			);
+			path = "UI Elements + Design Templates + Guides";
+			sourceTree = "<group>";
+		};
+		AEF86B10247A1DAF0042C758 /* Production Templates */ = {
+			isa = PBXGroup;
+			children = (
+				AEF86B11247A1DAF0042C758 /* Template-PromotionalImages-iOS.xd */,
+				AEF86B12247A1DAF0042C758 /* Template-Glyph-QuickAction.xd */,
+				AEF86B13247A1DAF0042C758 /* Template-AppIcons-iMessage-iOS.xd */,
+				AEF86B14247A1DAF0042C758 /* Template-Glyph-NavigationBarAndToolbar.xd */,
+				AEF86B15247A1DAF0042C758 /* Template-Glyphs-ActivityViewActions.xd */,
+				AEF86B16247A1DAF0042C758 /* Template-Glyph-TabBar.xd */,
+				AEF86B17247A1DAF0042C758 /* Template-AppIcons-iOS.xd */,
+			);
+			path = "Production Templates";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +159,10 @@
 			dependencies = (
 			);
 			name = "Original Application";
+			packageProductDependencies = (
+				AEBCB8F4247A4AFF00517168 /* Realm */,
+				AEBCB8F6247A4AFF00517168 /* RealmSwift */,
+			);
 			productName = "Original Application";
 			productReference = AE3A9CB424740FEE00DD0C09 /* Original Application.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +191,9 @@
 				Base,
 			);
 			mainGroup = AE3A9CAB24740FEE00DD0C09;
+			packageReferences = (
+				AEBCB8F3247A4AFF00517168 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = AE3A9CB524740FEE00DD0C09 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,9 +208,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF86B1C247A1DB00042C758 /* Template-Glyph-QuickAction.xd in Resources */,
 				AE3A9CCE2476E25D00DD0C09 /* Main.storyboard in Resources */,
+				AEF86B20247A1DB00042C758 /* Template-Glyph-TabBar.xd in Resources */,
+				AEF86B1A247A1DB00042C758 /* UIElements+DesignTemplates+Guides-iPad.xd in Resources */,
+				AEF86B19247A1DB00042C758 /* UIElements+DesignTemplates+Guides-iPhone.xd in Resources */,
+				AEF86B1B247A1DB00042C758 /* Template-PromotionalImages-iOS.xd in Resources */,
+				AE3A9D0E2479F4D200DD0C09 /* FolderCollectionViewCell.xib in Resources */,
+				AEF86B1D247A1DB00042C758 /* Template-AppIcons-iMessage-iOS.xd in Resources */,
+				AEF86B21247A1DB00042C758 /* Template-AppIcons-iOS.xd in Resources */,
 				AE3A9CC424740FF100DD0C09 /* LaunchScreen.storyboard in Resources */,
+				AEF86B1E247A1DB00042C758 /* Template-Glyph-NavigationBarAndToolbar.xd in Resources */,
 				AE3A9D0824788B7D00DD0C09 /* FieldTableViewCell.xib in Resources */,
+				AEF86B1F247A1DB00042C758 /* Template-Glyphs-ActivityViewActions.xd in Resources */,
+				AEF86B18247A1DB00042C758 /* TextStyles-NewYork.xd in Resources */,
 				AE3A9CC124740FF100DD0C09 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,9 +233,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE3A9CBC24740FEE00DD0C09 /* ViewController.swift in Sources */,
+				AEBCB8F9247A4B7000517168 /* DB.swift in Sources */,
+				AE3A9CBC24740FEE00DD0C09 /* MemoViewController.swift in Sources */,
+				AE3A9D0A2479EE8600DD0C09 /* FolderViewController.swift in Sources */,
 				AE3A9CB824740FEE00DD0C09 /* AppDelegate.swift in Sources */,
 				AE3A9D0724788B7D00DD0C09 /* FieldTableViewCell.swift in Sources */,
+				AE3A9D0D2479F4D200DD0C09 /* FolderCollectionViewCell.swift in Sources */,
 				AE3A9CBA24740FEE00DD0C09 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +429,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AEBCB8F3247A4AFF00517168 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AEBCB8F4247A4AFF00517168 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEBCB8F3247A4AFF00517168 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		AEBCB8F6247A4AFF00517168 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEBCB8F3247A4AFF00517168 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AE3A9CAC24740FEE00DD0C09 /* Project object */;
 }
