@@ -14,15 +14,17 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var table: UITableView!
     
     var models: [Int] = []
+    
+    var memos: Results<Memo>!
 
     var memoNumber: Int = 0
+    var memoId: Int!
     
-    var memoIdNumber: Int = 0
+    var changedText: String!
     
     @IBOutlet var editButton: UIBarButtonItem!
     
     let realm = try! Realm()
-    let memos = try! Realm().objects(Memo.self).sorted(byKeyPath: "id")
     
     var notificationToken: NotificationToken?
     
@@ -32,6 +34,9 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         table.register(FieldTableViewCell.nib(), forCellReuseIdentifier: FieldTableViewCell.identifier)
         table.delegate = self
         table.dataSource = self
+        
+        let realm = try! Realm()
+        memos = realm.objects(Memo.self)
         
         notificationToken = memos.observe { [weak self] _ in
             self?.table.reloadData()
@@ -43,7 +48,7 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     // TableViewに表示するセルの数を返却します。
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return models.count
+        return memos.count
     }
 
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,6 +58,7 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        return cell
 //    }
     
+    //cellの移動
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -63,22 +69,36 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         let moveObjTmp = models[sourceIndexPath.row]
         models.remove(at: sourceIndexPath.row)
         models.insert(moveObjTmp, at: destinationIndexPath.row)
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
+    }
+    //cellの編集
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        guard editingStyle == .delete else {return}
+//        print("delete")
+
         if (editingStyle == .delete) {
-            models.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+//            models.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .automatic)
+//
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(self.memos[indexPath.row])
+        }
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
         }
     }
         
-    // 各セルを生成して返却します。
+    // 各セルを生成して返却 ,表示するcellの中身の設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let fieldCell = tableView.dequeueReusableCell(withIdentifier: FieldTableViewCell.identifier, for: indexPath) as! FieldTableViewCell
+//        let fieldCell = tableView.dequeueReusableCell(withIdentifier: FieldTableViewCell.identifier, for: indexPath) as! FieldTableViewCell
         
-        fieldCell.field?.text = memos[indexPath.row].textedMemo
+        let fieldCell = tableView.dequeueReusableCell(withIdentifier: "FieldTableViewCell", for: indexPath) as! FieldTableViewCell
+        
+//        memo.textedMemo = memos[indexPath.row].textedMemo
+        
+            //データベースの中身の表示
+        fieldCell.field.text = memos[indexPath.row].textedMemo
         
         return fieldCell
     }
@@ -110,7 +130,18 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func add() {
         let memo = Memo()
         
-        memo.id = Int(memoIdNumber)
+        if memos.count == 0 {
+            memoId = 1
+            memo.id = memos.count + 1
+            memoId = memoId + 1
+        } else if memos.count >= 1 {
+            
+            memo.id = Int(memoId)
+            memoId = memoId + 1
+        }
+        
+        print(memo.id)
+        memo.textedMemo = ""
         
         models.append(memoNumber)
         print(memoNumber)
@@ -120,7 +151,8 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
             realm.add(memo)
         }
         
-        memoIdNumber = memoIdNumber + 1
+        
     }
+    
 }
 

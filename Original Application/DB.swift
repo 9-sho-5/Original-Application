@@ -10,12 +10,15 @@ import Foundation
 import RealmSwift
 
 class Memo: Object {
-    @objc dynamic var id: Int = 0
+    @objc dynamic var id: Int = 1
     @objc dynamic var textedMemo: String = ""
 }
 
 class Folder: Object {
-    @objc dynamic var id: Int = 0
+    @objc dynamic var id: Int = 1
     @objc dynamic var name: String = ""
     @objc dynamic var date: Date!
+    
+    //１対多の関係
+    let lotsMemo = List<Memo>()
 }

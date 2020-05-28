@@ -13,6 +13,10 @@ class FieldTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     var table: UITableView!
     
+    @IBOutlet var field: UITextField!
+    
+    var addMemo: String!
+    
     let realm = try! Realm()
     
     static let identifier = "FieldTableViewCell"
@@ -21,10 +25,6 @@ class FieldTableViewCell: UITableViewCell, UITextFieldDelegate {
         return UINib(nibName: "FieldTableViewCell", bundle: nil)
     }
     
-    @IBOutlet var field: UITextField!
-    
-    var addMemo: String!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         field.placeholder = "Write Somothing"
@@ -32,17 +32,8 @@ class FieldTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let memo = Memo()
         
-//        print("\(textField.text ?? "")")
-
-        addMemo = memo.textedMemo
-        
-        try! realm.write {
-            // プロパティ値を変更することで
-            // Realmに反映される
-            memo.textedMemo = addMemo
-        }
+        print("\(textField.text ?? "")")
         
         textField.resignFirstResponder()
         
@@ -53,6 +44,10 @@ class FieldTableViewCell: UITableViewCell, UITextFieldDelegate {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configure(with memo: Memo) {
+        field.text = memo.textedMemo
     }
     
 }
