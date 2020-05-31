@@ -12,6 +12,10 @@ import RealmSwift
 class Memo: Object {
     @objc dynamic var id: Int = 1
     @objc dynamic var textedMemo: String = ""
+    @objc dynamic var folderId: Int = 1
+    @objc dynamic var folderCheckingId: Int = 2
+    @objc dynamic var date: Date!
+    let folder = LinkingObjects(fromType: Folder.self, property: "memos")
 }
 
 class Folder: Object {
@@ -20,5 +24,5 @@ class Folder: Object {
     @objc dynamic var date: Date!
     
     //１対多の関係
-    let lotsMemo = List<Memo>()
+    let memos = List<Memo>()
 }

@@ -9,6 +9,10 @@
 import UIKit
 import RealmSwift
 
+protocol TableViewCellDelegate {
+    func textFieldDidEndEditing(cell: FieldTableViewCell, value: String) -> ()
+}
+
 class FieldTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     var table: UITableView!
@@ -34,6 +38,14 @@ class FieldTableViewCell: UITableViewCell, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         print("\(textField.text ?? "")")
+        
+        let memo = Memo()
+
+        try! realm.write {
+            memo.textedMemo = String("\(textField.text ?? "")")
+        }
+        
+        
         
         textField.resignFirstResponder()
         

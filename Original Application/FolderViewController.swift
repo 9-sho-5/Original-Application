@@ -19,6 +19,8 @@ class FolderViewController: UIViewController {
     
     var folderIdNumber: Int = 0
     
+    var folderId: Int!
+    
     let realm = try! Realm()
     let folders = try! Realm().objects(Folder.self).sorted(byKeyPath: "id")
     
@@ -46,7 +48,15 @@ class FolderViewController: UIViewController {
         
         let folder = Folder()
         
-        folder.id = Int(folderIdNumber)
+        if folders.count == 0 {
+            folderId = 1
+            folder.id = folders.count + 1
+            folderId = folderId + 1
+        } else if folders.count >= 1 {
+            folder.id = Int(folderId)
+            folderId = folderId + 1
+        }
+        
         folder.date = Date()
         
         models.append(folderNumber)
@@ -56,8 +66,6 @@ class FolderViewController: UIViewController {
         try! realm.write {
             realm.add(folder)
         }
-        
-        folderIdNumber = folderIdNumber + 1
         
         collectionView.reloadData()
     }
@@ -77,7 +85,7 @@ extension FolderViewController: UICollectionViewDelegate {
 
 extension FolderViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return models.count
+        return folders.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
